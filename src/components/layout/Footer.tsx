@@ -4,10 +4,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
-
+import { motion, Variants } from 'framer-motion';
 // --- Animation Variants ---
-const footerContainerVariants = {
+const footerContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -18,7 +17,7 @@ const footerContainerVariants = {
   },
 };
 
-const footerItemVariants = {
+const footerItemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
@@ -28,7 +27,7 @@ const footerItemVariants = {
 };
 
 // NEW: Scale Pop variants for the social icons
-const iconPopVariants = {
+const iconPopVariants: Variants = {
   hidden: { opacity: 0, scale: 0 },
   visible: { 
     opacity: 1, 

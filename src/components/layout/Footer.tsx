@@ -22,7 +22,7 @@ const footerItemVariants: Variants = {
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 0.6, ease: 'easeOut' } 
+    transition: { duration: 0.6, ease: 'easeOut' as const } // <-- Added "as const" here
   },
 };
 
@@ -32,10 +32,9 @@ const iconPopVariants: Variants = {
   visible: { 
     opacity: 1, 
     scale: 1,
-    transition: { type: "spring", stiffness: 300, damping: 12 } // Bouncy entrance
+    transition: { type: "spring" as const, stiffness: 300, damping: 12 } // <-- Added "as const" here too just to be safe
   }
 };
-
 export default function Footer() {
   const pathname = usePathname();
 

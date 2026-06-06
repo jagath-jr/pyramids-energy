@@ -1,0 +1,38 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Power Plant Project",
+    location: "Abu Dhabi, UAE",
+    image: "/placeholder-project1.jpg",
+    year: 2023,
+    description: "Complete power plant infrastructure setup",
+    status: "Completed",
+  },
+  {
+    id: 2,
+    title: "Distribution Network",
+    location: "Dubai, UAE",
+    image: "/placeholder-project2.jpg",
+    year: 2023,
+    description: "City-wide distribution network expansion",
+    status: "Completed",
+  },
+  {
+    id: 3,
+    title: "Transmission Line",
+    location: "Sharjah, UAE",
+    image: "/placeholder-project3.jpg",
+    year: 2022,
+    description: "High-voltage transmission line installation",
+    status: "Completed",
+  },
+  {
+    id: 4,
+    title: "Substation Upgrade",
+    location: "Ajman, UAE",
+    image: "/placeholder-project4.jpg",
+    year: 2022,
+    description: "Major substation modernization",
+    status: "Completed",
+  },
+];

@@ -1,0 +1,38 @@
+export const jobs = [
+  {
+    id: 1,
+    title: "Senior Electrical Engineer",
+    department: "Engineering",
+    location: "Dubai, UAE",
+    type: "Full-time",
+    experience: "5+ years",
+    salary: "AED 15,000 - 20,000",
+  },
+  {
+    id: 2,
+    title: "Project Manager",
+    department: "Project Management",
+    location: "Abu Dhabi, UAE",
+    type: "Full-time",
+    experience: "7+ years",
+    salary: "AED 18,000 - 25,000",
+  },
+  {
+    id: 3,
+    title: "Safety Officer",
+    department: "Safety & Compliance",
+    location: "Sharjah, UAE",
+    type: "Full-time",
+    experience: "3+ years",
+    salary: "AED 8,000 - 12,000",
+  },
+  {
+    id: 4,
+    title: "Technical Technician",
+    department: "Operations",
+    location: "Dubai, UAE",
+    type: "Full-time",
+    experience: "2+ years",
+    salary: "AED 5,000 - 8,000",
+  },
+];

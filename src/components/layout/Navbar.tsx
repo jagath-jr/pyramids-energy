@@ -7,7 +7,9 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- Animation Variants ---
-const navContainerVariants = {
+import { Variants } from 'framer-motion'; // Optionally import Variants for stricter typing
+
+const navContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -18,15 +20,17 @@ const navContainerVariants = {
   },
 };
 
-const navItemVariants = {
+const navItemVariants: Variants = {
   hidden: { opacity: 0, y: -15 },
   visible: { 
     opacity: 1, 
     y: 0, 
-    transition: { duration: 0.4, ease: 'easeOut' } 
+    transition: { 
+      duration: 0.4, 
+      ease: 'easeOut' as const // <-- Add "as const" here!
+    } 
   },
 };
-
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

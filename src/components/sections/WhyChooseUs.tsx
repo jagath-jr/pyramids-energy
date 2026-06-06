@@ -81,7 +81,9 @@ const reasons = [
 ];
 
 // --- Animation Variants ---
-const containerVariants = {
+import { Variants } from 'framer-motion'; // Add this import at the top if you want to be extra strict
+
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -89,11 +91,17 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.5, 
+      ease: 'easeOut' as const // <-- Add "as const" here!
+    } 
+  },
 };
-
 export default function WhyChooseUs() {
   return (
     <section className="relative z-10 w-full flex flex-col bg-white">

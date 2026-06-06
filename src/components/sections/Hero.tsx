@@ -46,17 +46,19 @@ const sliderData = [
 ];
 
 // --- Define Framer Motion animation variants ---
-const slideInLeftVariants = {
+import { Variants } from 'framer-motion'; // Add this to your imports
+
+const slideInLeftVariants: Variants = {
   hidden: { opacity: 0, x: -100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.3 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut' as const, delay: 0.3 } },
 };
 
-const popInVariants = {
+const popInVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: [0.175, 0.885, 0.32, 1.275], delay: 0.3 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: [0.175, 0.885, 0.32, 1.275] as const, delay: 0.3 } },
 };
 
-const staggerContainerVariants = {
+const staggerContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -67,16 +69,15 @@ const staggerContainerVariants = {
   },
 };
 
-const staggerItemVariants = {
+const staggerItemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const flipInVariants = {
+const flipInVariants: Variants = {
   hidden: { opacity: 0, rotateY: 90 },
-  visible: { opacity: 1, rotateY: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.3 } },
+  visible: { opacity: 1, rotateY: 0, transition: { duration: 0.8, ease: 'easeOut' as const, delay: 0.3 } },
 };
-
 // --- Main Hero Component ---
 
 const Hero: React.FC = () => {

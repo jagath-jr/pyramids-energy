@@ -41,22 +41,21 @@ export default function ContactSection() {
     setTimeout(() => setSubmitStatus('idle'), 4000);
   };
 
-  // --- Animation Variants ---
+// --- Animation Variants ---
   const fadeInDown = {
     hidden: { opacity: 0, y: -30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
   };
 
   const slideInLeft = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut', delay: 0.2 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' as const, delay: 0.2 } },
   };
 
   const slideInRight = {
     hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut', delay: 0.4 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: 'easeOut' as const, delay: 0.4 } },
   };
-
   return (
     <section className="relative z-10 w-full bg-white py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

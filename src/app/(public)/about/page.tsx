@@ -107,7 +107,8 @@ export default function AboutPage() {
             className="object-cover object-center"
             priority
           />
-<div className="absolute inset-0 bg-gradient-to-r from-[rgba(178,32,5,0.66)] to-[rgba(146,25,2,0)]" />        </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(178,32,5,0.66)] to-[rgba(146,25,2,0)]" />        
+        </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <motion.div 
@@ -180,7 +181,7 @@ export default function AboutPage() {
                 whileHover={{ scale: 1.05 }}
                 className="absolute top-4 right-4 bg-[#cd6e57] text-white p-5 rounded-xl shadow-lg z-30 w-40"
               >
-                <AnimatedCounter targetValue={98} suffix="%" duration={2500} />
+                <AnimatedCounter targetValue={100} suffix="%" duration={2000} />
                 <div className="text-xs leading-tight font-medium opacity-90 uppercase tracking-wide">
                   Customer Satisfaction
                 </div>
@@ -191,7 +192,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =========================================
+{/* =========================================
           MISSION & VISION SECTION
       ========================================= */}
       <section className="py-10 relative z-10">
@@ -208,75 +209,118 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-[#a62410]/90 mix-blend-multiply" />
             </div>
 
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 p-10 md:p-16 gap-10 md:gap-16">
-              <div className="bg-[#b92b14]/20 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-[#b92b14]/30 transition-colors">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 lowercase tracking-wide">our mission</h3>
-                <p className="text-white/90 text-sm md:text-base leading-relaxed font-light">
-                  To respond to diversified client requirements with multifaceted, cost-effective electrical solutions that exceed expectations and contribute to the advancement of the electrical industry.
-                </p>
-              </div>
-
-              <div className="bg-[#b92b14]/20 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-[#b92b14]/30 transition-colors">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 lowercase tracking-wide">our vision</h3>
-                <p className="text-white/90 text-sm md:text-base leading-relaxed font-light">
-                  To become a preferred solution provider for the electrical industry across the Middle East and neighboring regions.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* =========================================
-          WHAT WE OFFER SECTION
-      ========================================= */}
-      <section className="py-10 bg-[#fdfaf8] relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={slideInLeft}
-              className="flex flex-col"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">What We Offer</h2>
-              <div className="relative w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-md">
-                <Image src="/about-section3-img1.webp" alt="Worker in warehouse" fill className="object-cover object-top" />
-              </div>
-            </motion.div>
-
+            {/* Added staggerContainer to orchestrate the inner boxes */}
             <motion.div 
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={staggerContainer}
-              className="flex flex-col space-y-4 pt-10 lg:pt-0"
+              className="relative z-10 grid grid-cols-1 md:grid-cols-2 p-10 md:p-16 gap-10 md:gap-16"
             >
-              {[
-                "Certified Quality & HSE Management Systems",
-                "On-Time, On-Budget Project Delivery",
-                "Highly Skilled & Certified Engineers",
-                "Strong Utility & Government Relationships"
-              ].map((offer, index) => (
-                <motion.div 
-                  key={index}
-                  variants={fadeInUp}
-                  className="bg-[#fdfaf8] border border-[#e8d5cc] rounded-2xl p-5 flex items-center space-x-5 shadow-sm hover:shadow-md hover:border-[#b92b14]/40 transition-all duration-300"
-                >
-                  <div className="flex-shrink-0 bg-[#b92b14] w-12 h-12 flex items-center justify-center rounded-full text-white shadow-inner">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-800 font-medium md:text-lg">
-                    {offer}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
+              {/* Mission Box: Added motion, fadeInUp, and whileHover effects */}
+              <motion.div 
+                variants={fadeInUp}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#b92b14]/20 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-[#b92b14]/30 hover:shadow-2xl hover:shadow-black/20 transition-all duration-300"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-wide">Our Mission</h3>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed font-light">
+                  To respond to diversified client requirements with multifaceted, cost-effective electrical solutions that exceed expectations and contribute to the advancement of the electrical industry.
+                </p>
+              </motion.div>
 
+              {/* Vision Box: Added motion, fadeInUp, and whileHover effects */}
+              <motion.div 
+                variants={fadeInUp}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="bg-[#b92b14]/20 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-[#b92b14]/30 hover:shadow-2xl hover:shadow-black/20 transition-all duration-300"
+              >
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-wide">Our Vision</h3>
+                <p className="text-white/90 text-sm md:text-base leading-relaxed font-light">
+                  To become a preferred solution provider for the electrical industry across the Middle East and neighboring regions.
+                </p>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+  
+      {/* =========================================
+          WHAT WE OFFER SECTION (Updated)
+      ========================================= */}
+      <section className="py-10 md:py-10 relative z-10 overflow-hidden">
+        
+        {/* Complex Geometric Background */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundColor: '#E5E5F7',
+            opacity: 1,
+            backgroundImage: `conic-gradient(from 60deg at 56.25% calc(425% / 6), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
+                              conic-gradient(from 60deg at 56.25% calc(425% / 6), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
+                              conic-gradient(from 180deg at 43.75% calc(425% / 6), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
+                              conic-gradient(from 180deg at 43.75% calc(425% / 6), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
+                              conic-gradient(from -60deg at 50% calc(175% / 12), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
+                              conic-gradient(from -60deg at 50% calc(175% / 12), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg)`,
+            backgroundPosition: '0 0, 10px 17px, 0 0, 10px 17px, 10px 0, 0 17px',
+            backgroundSize: '20px 34px'
+          }}
+        />
+
+        {/* Blur Overlay added to the background to soften it */}
+        <div className="absolute inset-0 z-0 bg-white/40 backdrop-blur-[3px]" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Main White Content Box */}
+          <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-white/50">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={slideInLeft}
+                className="flex flex-col"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">What We Offer</h2>
+                <div className="relative w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-md">
+                  <Image src="/about-section3-img1.webp" alt="Worker in warehouse" fill className="object-cover object-top" />
+                </div>
+              </motion.div>
+
+              <motion.div 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={staggerContainer}
+                className="flex flex-col space-y-4 pt-10 lg:pt-0"
+              >
+                {[
+                  "Certified Quality & HSE Management Systems",
+                  "On-Time, On-Budget Project Delivery",
+                  "Highly Skilled & Certified Engineers",
+                  "Strong Utility & Government Relationships"
+                ].map((offer, index) => (
+                  <motion.div 
+                    key={index}
+                    variants={fadeInUp}
+                    className="bg-[#fdfaf8] border border-[#e8d5cc] rounded-2xl p-5 flex items-center space-x-5 shadow-sm hover:shadow-md hover:border-[#b92b14]/40 transition-all duration-300"
+                  >
+                    <div className="flex-shrink-0 bg-[#b92b14] w-12 h-12 flex items-center justify-center rounded-full text-white shadow-inner">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-800 font-medium md:text-lg">
+                      {offer}
+                    </span>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+            </div>
           </div>
         </div>
       </section>
@@ -332,7 +376,7 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================
-          LIGHTBOX MODAL (Updated for Scrollable Reading)
+          LIGHTBOX MODAL
       ========================================= */}
       <AnimatePresence>
         {selectedCert && (
@@ -348,10 +392,8 @@ export default function AboutPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()} 
-              // Changed container to support vertical scrolling
               className="relative w-full max-w-3xl max-h-[90vh] bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden"
             >
-              {/* Close Button - Fixed to the top right of the modal */}
               <div className="absolute top-4 right-4 z-20">
                 <button 
                   onClick={() => setSelectedCert(null)}
@@ -363,13 +405,12 @@ export default function AboutPage() {
                 </button>
               </div>
 
-              {/* Scrollable Container */}
               <div className="w-full overflow-y-auto p-4 pt-16 sm:p-8 bg-gray-50">
                 <Image 
                   src={selectedCert} 
                   alt="Full Certification View" 
                   width={1200}
-                  height={1697} // Approximate A4 standard aspect ratio
+                  height={1697}
                   className="w-full h-auto shadow-sm border border-gray-200"
                 />
               </div>

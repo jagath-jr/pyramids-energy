@@ -143,7 +143,7 @@ export default function CareersPage() {
             transition={{ delay: 0.2 }}
             className="inline-block bg-white/20 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-medium tracking-wide mb-4"
           >
-            Careers
+            Discover
           </motion.div>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">

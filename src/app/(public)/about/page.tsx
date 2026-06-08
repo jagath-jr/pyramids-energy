@@ -245,30 +245,64 @@ export default function AboutPage() {
         </div>
       </section>
   
-      {/* =========================================
-          WHAT WE OFFER SECTION (Updated)
+{/* =========================================
+          WHAT WE OFFER SECTION (Animated Waves)
       ========================================= */}
       <section className="py-10 md:py-10 relative z-10 overflow-hidden">
         
-        {/* Complex Geometric Background */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundColor: '#E5E5F7',
-            opacity: 1,
-            backgroundImage: `conic-gradient(from 60deg at 56.25% calc(425% / 6), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
-                              conic-gradient(from 60deg at 56.25% calc(425% / 6), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
-                              conic-gradient(from 180deg at 43.75% calc(425% / 6), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
-                              conic-gradient(from 180deg at 43.75% calc(425% / 6), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
-                              conic-gradient(from -60deg at 50% calc(175% / 12), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg), 
-                              conic-gradient(from -60deg at 50% calc(175% / 12), transparent 0deg, transparent 0.5deg, #f74545 0.5deg, #f74545 119.5deg, transparent 119.5deg, transparent 120deg)`,
-            backgroundPosition: '0 0, 10px 17px, 0 0, 10px 17px, 10px 0, 0 17px',
-            backgroundSize: '20px 34px'
-          }}
-        />
+        {/* CSS for Animated Gradient and Waves */}
+        <style>{`
+          .animated-gradient-bg {
+            background: linear-gradient(315deg, #ffbaba 0%, #ff7b7b 25%, #ff5252 50%, #ff0000 75%, #a70000 100%);
+            animation: gradient 15s ease infinite;
+            background-size: 400% 400%;
+          }
+          @keyframes gradient {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+          }
+          .wave {
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 1000% 1000% 0 0;
+            position: absolute;
+            width: 200%;
+            height: 12em;
+            animation: wave 10s -3s linear infinite;
+            transform: translate3d(0, 0, 0);
+            opacity: 0.8;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+          }
+          .wave:nth-of-type(2) {
+            bottom: -1.25em;
+            animation: wave 18s linear reverse infinite;
+            opacity: 0.8;
+          }
+          .wave:nth-of-type(3) {
+            bottom: -2.5em;
+            animation: wave 20s -1s reverse infinite;
+            opacity: 0.9;
+          }
+          @keyframes wave {
+            2% { transform: translateX(1%); }
+            25% { transform: translateX(-25%); }
+            50% { transform: translateX(-50%); }
+            75% { transform: translateX(-25%); }
+            100% { transform: translateX(1%); }
+          }
+        `}</style>
 
-        {/* Blur Overlay added to the background to soften it */}
-        <div className="absolute inset-0 z-0 bg-white/40 backdrop-blur-[3px]" />
+        {/* Animated Background Container */}
+        <div className="absolute inset-0 z-0 animated-gradient-bg">
+          <div className="wave"></div>
+          <div className="wave"></div>
+          <div className="wave"></div>
+        </div>
+
+        {/* Optional Blur Overlay (Adjust opacity if you want the waves more/less visible) */}
+        <div className="absolute inset-0 z-0 bg-white/10 backdrop-blur-[1px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Main White Content Box */}
@@ -322,7 +356,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* =========================================
           OUR CERTIFICATIONS SECTION
       ========================================= */}
